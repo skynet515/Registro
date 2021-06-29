@@ -1,0 +1,51 @@
+﻿
+
+@model List<RegistroAlumno.Models.ListViewModel.ListAlumnoViewModel>
+@{
+    ViewBag.Title = "Alumnos";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="row" style="text-align:right; padding:5px">
+    <a href="~/Alumno/Nuevo" class="btn btn-primary">Nuevo Alumno</a>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Sexo</th>
+                <th>Grado</th>
+                <th>Observaciones</th>
+                <th>Fecha de Creación</th>
+                <th>Fecha de Actualizacion</th>
+                <th>Accion</th>
+
+            </tr>
+            @foreach (var i in Model)
+            {
+                <tr>
+                    <td>@i.Alm_id</td>
+                    <td>@i.Alm_nombre</td>
+                    <td>@i.Alm_edad</td>
+                    <td>@i.Alm_sexo</td>
+                    <td>@i.Alm_id_grd</td>
+                    <td>@i.Alm_observaciones</td>
+                    <td>@i.Created_at</td>
+                    <td>@i.Updated_at</td>
+                    <td>
+                        <a href="~/Alumno/Editar/@i.Alm_id" class="btn btn-success">Editar</a>
+                        <a href="~/Alumno/Eliminar/@i.Alm_id" class="btn alert-danger">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </table>
+
+    </div>
+
+</div>
+

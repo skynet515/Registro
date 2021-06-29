@@ -1,0 +1,49 @@
+﻿
+@model RegistroAlumno.Models.ListViewModel.AlumnoViewModel
+@{
+    ViewBag.Title = "Nuevo";
+    List<SelectListItem> items = ViewBag.items;
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Editar", "Alumno", FormMethod.Post))
+{
+
+    @Html.HiddenFor(d=>d.Alm_id)
+
+
+    @Html.LabelFor(d => d.Alm_nombre)
+    @Html.TextBoxFor(d => d.Alm_nombre, "", new { @class = "form-control" });
+
+    @Html.LabelFor(d => d.Alm_edad)
+    @Html.TextBoxFor(d => d.Alm_edad, "", new { @class = "form-control" });
+
+    @Html.LabelFor(d => d.Alm_sexo)
+    @Html.TextBoxFor(d => d.Alm_sexo, "", new { @class = "form-control" });
+
+    /*@Html.LabelFor(d => d.Alm_nombre)
+    @Html.DropDownList("Grados", items, "-Seleccionar grado-", new { @class = "form-control"});*/
+
+    @Html.LabelFor(d => d.Alm_id_grd)
+    @Html.TextBoxFor(d => d.Alm_id_grd, "", new { @class = "form-control" });
+
+
+    @Html.LabelFor(d => d.Alm_observaciones)
+    @Html.TextBoxFor(d => d.Alm_observaciones, "", new { @class = "form-control" });
+
+    @Html.HiddenFor(d => d.Created_at)
+    
+
+    @Html.LabelFor(d => d.Updated_at)
+    <br />
+    @Html.EditorFor(d => d.Updated_at, "", new { @class = "form-control" });
+
+    <div style="padding-top: 5px">
+        <input type="submit" value="Guardar" class="btn btn-primary" />
+    </div>
+
+}
+
+
+

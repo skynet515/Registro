@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Materias por Grado";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="row" style="text-align:right; padding:5px">
+    <a href="#" class="btn btn-primary">Agregar</a>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <tr>
+                <th>#</th>
+                <th>Nombre Materia</th>
+                <th>Grado</th>
+                <th>Accion</th>
+
+            </tr>
+            @foreach (var i in ViewBag.list)
+            {
+                <tr>
+                    <td>@i.Mxg</td>
+                    <td>@i.Mat_nombre</td>
+                    <td>@i.</td>
+                    <td>@i.Updated_at</td>
+                    <td>
+                        <a href="~/Materia/Editar/@i.Mat_id" class="btn btn-success">Editar</a>
+                        <a href="~/Materia/Eliminar/@i.Mat_id" class="btn alert-danger">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </table>
+
+    </div>
+
+</div>
+

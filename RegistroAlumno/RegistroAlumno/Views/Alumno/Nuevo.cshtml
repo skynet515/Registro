@@ -1,0 +1,77 @@
+﻿@model RegistroAlumno.Models.ListViewModel.AlumnoViewModel
+@{
+    //ViewBag.Title = "Nuevo";
+    //List<SelectListItem> items = ViewBag.items;
+}
+
+<h2>Nuevo</h2>
+
+@using (Html.BeginForm("Nuevo", "Alumno", FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(d => d.Alm_id)
+
+        @Html.TextBoxFor(d => d.Alm_id, "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(d => d.Alm_id, null, new { @class = "red" })
+    </div>
+
+
+    <div>
+        @Html.LabelFor(d => d.Alm_nombre)
+        @Html.TextBoxFor(d => d.Alm_nombre, "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(d => d.Alm_nombre, null, new { @class = "red" })
+    </div>
+
+    <div>
+        @Html.LabelFor(d => d.Alm_edad)
+        @Html.TextBoxFor(d => d.Alm_edad, "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(d => d.Alm_edad, null, new { @class = "red" })
+    </div>
+
+    <div>
+        @Html.LabelFor(d => d.Alm_sexo)
+        @Html.TextBoxFor(d => d.Alm_sexo, "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(d => d.Alm_sexo, null, new { @class = "red" })
+
+    </div>
+
+    <div>
+        @Html.LabelFor(d => d.Alm_id_grd)
+        @Html.TextBoxFor(d => d.Alm_id_grd, "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(d => d.Alm_nombre, null, new { @class = "red" })
+    </div>
+   
+
+
+
+
+    <div>
+        @Html.LabelFor(d => d.Alm_observaciones)
+        @Html.TextBoxFor(d => d.Alm_observaciones, "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(d => d.Alm_observaciones, null, new { @class = "red" })
+    </div>
+
+    <div>
+        @Html.LabelFor(d => d.Created_at)
+        <br />
+        @Html.EditorFor(d => d.Created_at, "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(d => d.Created_at, null, new { @class = "red" })
+    </div>
+    <br />
+
+    <div>
+        @Html.LabelFor(d => d.Updated_at)
+        <br />
+        @Html.EditorFor(d => d.Updated_at, "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(d => d.Updated_at, null, new { @class = "red" })
+    </div>
+
+
+
+
+    <div style="padding-top: 5px">
+        <input type="submit" value="Guardar" class="btn btn-primary" />
+    </div>
+
+}
+
